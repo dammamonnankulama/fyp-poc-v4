@@ -1,0 +1,150 @@
+{
+  "decided_utc": "2026-11-08T07:49:33+00:00",
+  "source_notebook": "04_imbalance_handling.ipynb",
+  "feature_set": "all_17",
+  "features": [
+    "hour",
+    "time_of_day",
+    "is_night",
+    "Day_of_week",
+    "is_weekend",
+    "Light_conditions",
+    "Weather_conditions",
+    "Road_surface_conditions",
+    "Road_surface_type",
+    "Road_alignment",
+    "Lanes_or_Medians",
+    "Types_of_Junction",
+    "Area_accident_occurred",
+    "Age_band_of_driver",
+    "Driving_experience",
+    "Type_of_vehicle",
+    "Cause_of_accident"
+  ],
+  "categorical_features": [
+    "time_of_day",
+    "Day_of_week",
+    "Light_conditions",
+    "Weather_conditions",
+    "Road_surface_conditions",
+    "Road_surface_type",
+    "Road_alignment",
+    "Lanes_or_Medians",
+    "Types_of_Junction",
+    "Area_accident_occurred",
+    "Age_band_of_driver",
+    "Driving_experience",
+    "Type_of_vehicle",
+    "Cause_of_accident"
+  ],
+  "numeric_features": [
+    "hour",
+    "is_night",
+    "is_weekend"
+  ],
+  "removed_features": [],
+  "imbalance_method_per_model": {
+    "LogReg": "smotenc",
+    "RandomForest": "class_weight",
+    "XGBoost": "oversample",
+    "NeuralNet": "oversample",
+    "KNN": "oversample"
+  },
+  "selection_metric": "test_macro_f1",
+  "split": [
+    "80/20"
+  ],
+  "n_repeats": 5,
+  "random_seed": 42,
+  "decision_rule": "smallest feature set whose removal does not reduce any model's mean test macro-F1 by more than 1.0 std (paired over seeds)",
+  "evidence_delta_macro_f1": {
+    "without_lanes_alignment": {
+      "LogReg": {
+        "mean": 0.016,
+        "std": 0.0068
+      },
+      "RandomForest": {
+        "mean": -0.0195,
+        "std": 0.0212
+      },
+      "XGBoost": {
+        "mean": 0.0056,
+        "std": 0.0069
+      },
+      "NeuralNet": {
+        "mean": -0.004,
+        "std": 0.0349
+      },
+      "KNN": {
+        "mean": -0.0083,
+        "std": 0.0094
+      }
+    },
+    "without_weak_road": {
+      "LogReg": {
+        "mean": 0.019,
+        "std": 0.0069
+      },
+      "RandomForest": {
+        "mean": -0.016,
+        "std": 0.0186
+      },
+      "XGBoost": {
+        "mean": 0.012,
+        "std": 0.0096
+      },
+      "NeuralNet": {
+        "mean": 0.0043,
+        "std": 0.0241
+      },
+      "KNN": {
+        "mean": 0.0052,
+        "std": 0.0108
+      }
+    },
+    "without_redundant_time": {
+      "LogReg": {
+        "mean": 0.0048,
+        "std": 0.006
+      },
+      "RandomForest": {
+        "mean": 0.0209,
+        "std": 0.0173
+      },
+      "XGBoost": {
+        "mean": 0.0051,
+        "std": 0.0075
+      },
+      "NeuralNet": {
+        "mean": 0.0031,
+        "std": 0.0324
+      },
+      "KNN": {
+        "mean": 0.012,
+        "std": 0.0077
+      }
+    },
+    "reduced_11": {
+      "LogReg": {
+        "mean": 0.0182,
+        "std": 0.01
+      },
+      "RandomForest": {
+        "mean": -0.005,
+        "std": 0.0202
+      },
+      "XGBoost": {
+        "mean": 0.0153,
+        "std": 0.007
+      },
+      "NeuralNet": {
+        "mean": 0.0032,
+        "std": 0.0205
+      },
+      "KNN": {
+        "mean": 0.0247,
+        "std": 0.0117
+      }
+    }
+  }
+}
