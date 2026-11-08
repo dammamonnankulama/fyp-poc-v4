@@ -14,6 +14,7 @@ Run them in order. Each one reads the previous one's output.
 |---|---|---|
 | `notebooks/01_data_exploration.ipynb` | Data quality, target imbalance, temporal/context patterns, leakage review | `reports/figures/*.png` |
 | `notebooks/02_data_preprocessing.ipynb` | Cleaning, feature engineering, Model 1 feature selection, validation | `data/processed/*.csv`, `preprocessing_metadata.json` |
+| `notebooks/03_baseline_models.ipynb` | Configurable baselines: any split ratios × repeated seeds × custom feature sets, train vs test metrics, drop-one-feature analysis | `reports/experiments/experiment_log.csv`, figures 06–10 |
 
 ## Run locally (conda)
 
