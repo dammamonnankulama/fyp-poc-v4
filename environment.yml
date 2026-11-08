@@ -1,0 +1,31 @@
+name: accident-severity-poc
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.16
+  - pip
+  # Data
+  - pandas=3.0.5
+  - numpy<2              # torch 2.2.2 compiled against NumPy 1.x
+  - scipy
+  # ML
+  - scikit-learn=1.9.0
+  - xgboost=3.2.0
+  - imbalanced-learn     # SMOTE / SMOTENC for class-imbalance correction
+  # Deep Learning
+  - pytorch::pytorch=2.2.2
+  - pytorch::torchvision
+  - pytorch::cpuonly       # macOS CPU build; remove if GPU target
+  # App
+  - streamlit=1.63.0
+  # Dev / Test
+  - pytest=9.1.1
+  - jupyter
+  - ipykernel
+  - pip:
+      - joblib
+      - matplotlib
+      - seaborn
+      - plotly
